@@ -6,7 +6,17 @@
       "Bash(node --version:*)",
       "Bash(git init:*)",
       "Bash(git add:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(brew install:*)",
+      "Bash(sudo chown:*)",
+      "Bash(chmod:*)",
+      "Bash(npm run build:*)",
+      "Bash(git remote set-url:*)"
     ]
   }
 }
