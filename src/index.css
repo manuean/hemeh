@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #fafafa;
+  color: #171717;
+  line-height: 1.6;
+}
+
+/* Dark mode support */
+.dark body {
+  background-color: #0a0a0a;
+  color: #fafafa;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+/* Horizontal scroll snap */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-x > * {
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.dark .card-hover:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Status badge pulse */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0074d4 0%, #00a3ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-4 py-2 bg-neutral-900 text-white rounded-lg font-medium hover:bg-neutral-800 transition-colors;
+}
+
+.dark .btn-primary {
+  @apply bg-white text-neutral-900 hover:bg-neutral-100;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 border border-neutral-200 rounded-lg font-medium hover:bg-neutral-50 transition-colors;
+}
+
+.dark .btn-secondary {
+  @apply border-neutral-700 hover:bg-neutral-800;
+}
